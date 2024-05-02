@@ -7,11 +7,11 @@ const Input = forwardRef(function Input({ id, error, label, ...props }, ref) {
       <div className={classes.inputContainer}>
         <div className="position-relative">
           <input
+            {...props}
             ref={ref}
             placeholder=" "
-            className={classes.input}
+            className={`${classes.input} ${props.className}`}
             id={id}
-            {...props}
           />
           <label className={classes.label} htmlFor={id}>
             {label}

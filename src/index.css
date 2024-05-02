@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /*
     Remove list styles (bullets/numbers)
     in case you use it with normalize.css
