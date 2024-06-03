@@ -7,11 +7,52 @@ import { useEffect } from "react";
 import getEmailAndToken from "./features/getEmailAndToken";
 import { useDispatch } from "react-redux";
 import { authActions } from "./store/reducers/authSlice";
+import Composed from "./pages/Composed";
+import Profile from "./pages/profile/Profile";
+import Inbox from "./pages/inbox/Inbox";
+import Send from "./pages/send/Send";
+import MailDetail from "./pages/inbox/MailDetail";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    children: [
+      {
+        index: true,
+        element: <Composed />,
+      },
+      {
+        path: "/inbox",
+        children: [
+          {
+            index: true,
+            element: <Inbox />,
+          },
+          {
+            path: "detail/:mailId",
+            element: <MailDetail opr={"inbox"} />,
+          },
+        ],
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/send",
+        children: [
+          {
+            index: true,
+            element: <Send />,
+          },
+          {
+            path: "detail/:mailId",
+            element: <MailDetail opr={"send"} />,
+          },
+        ],
+      },
+    ],
   },
   {
     path: "/auth",

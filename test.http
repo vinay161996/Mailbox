@@ -1,0 +1,7 @@
+POST https://mailbox-5cdc6-default-rtdb.firebaseio.com/test123com/send.json 
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice, { authActions } from "./reducers/authSlice";
-import userInfoSlice from "./reducers/userInfoSlice";
+import mailInfoSlice from "./reducers/mailInfoSlice";
 
 const authMiddleware = () => (next) => (action) => {
   if (authActions.login.match(action)) {
@@ -17,7 +17,7 @@ const authMiddleware = () => (next) => (action) => {
 const store = configureStore({
   reducer: {
     auth: authSlice,
-    userInfo: userInfoSlice,
+    mailInfo: mailInfoSlice,
   },
   middleware: (defaultMiddleware) => defaultMiddleware().concat(authMiddleware),
 });
