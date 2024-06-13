@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { BiStar } from "react-icons/bi";
 import { FaCircle } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import NoMail from "../../component/noMail/NoMail";

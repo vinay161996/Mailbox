@@ -13,7 +13,11 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchingEmails());
+    const interval = setInterval(() => {
+      dispatch(fetchingEmails());
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, [dispatch]);
 
   return (

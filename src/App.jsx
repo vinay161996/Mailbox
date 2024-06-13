@@ -12,6 +12,7 @@ import Profile from "./pages/profile/Profile";
 import Inbox from "./pages/inbox/Inbox";
 import Send from "./pages/send/Send";
 import MailDetail from "./pages/inbox/MailDetail";
+import NoContent from "./component/noContent/NoContent";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Composed />,
+      },
+      {
+        path: "/draft",
+        element: <NoContent />,
+      },
+      {
+        path: "/starred",
+        element: <NoContent />,
+      },
+      {
+        path: "/trash",
+        element: <NoContent />,
       },
       {
         path: "/inbox",

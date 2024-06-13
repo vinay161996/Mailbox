@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { MdMail } from "react-icons/md";
 import { RiDraftFill, RiLogoutBoxLine } from "react-icons/ri";
 import { TiStarFullOutline, TiLocationArrow } from "react-icons/ti";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
 import { Button } from "react-bootstrap";
 import classes from "./SideBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -90,13 +90,13 @@ const SideBar = ({ showSidebar }) => {
         </section>
 
         <section className="d-flex flex-column gap-2">
-          <NavLink
+          {/* <NavLink
             to={"/profile"}
             className="d-flex justify-content-center align-items-center fs-4 btn"
           >
             <CgProfile />
             <span className="fs-4 flex-grow-1">Profile</span>
-          </NavLink>
+          </NavLink> */}
           <Button
             variant="danger"
             className="d-flex justify-content-center align-items-center fs-5"

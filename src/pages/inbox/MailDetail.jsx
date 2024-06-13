@@ -1,4 +1,3 @@
-import { current } from "@reduxjs/toolkit";
 import { Container, Row, Col } from "react-bootstrap";
 import { BiStar } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";

@@ -14,11 +14,10 @@ const mailInfoSlice = createSlice({
       state.loading = !state.loading;
     },
     sendingMail(state, action) {
-      console.log("data", action.payload);
-      state.send.push(action.payload);
+      state.send.unshift(action.payload);
     },
     receivingMail(state, action) {
-      state.inbox.push(action.payload);
+      state.inbox.unshift(action.payload);
     },
     deletingMail(state, action) {
       if (action.payload.actionFrom === "inbox") {

@@ -57,17 +57,16 @@ export const fetchingEmails = () => {
   return async (dispatch, getState) => {
     try {
       const email = getState().auth.email;
-      console.log("email", email);
       const res = await fetch(`${baseUrl}/${emailChanger(email)}.json`);
       if (!res.ok) throw new Error();
       const data = await res.json();
-      console.log("data", data);
 
       if (data.send) {
         const updatedEmails = [];
         for (let key in data.send) {
           updatedEmails.push({ ...data.send[key], id: key });
         }
+        updatedEmails.reverse();
         dispatch(resetSendMail(updatedEmails));
       }
       if (data.inbox) {
@@ -75,6 +74,7 @@ export const fetchingEmails = () => {
         for (let key in data.inbox) {
           updatedEmails.push({ ...data.inbox[key], id: key });
         }
+        updatedEmails.reverse();
         dispatch(resetInboxMail(updatedEmails));
       }
     } catch (error) {
